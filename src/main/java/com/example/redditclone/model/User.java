@@ -14,8 +14,7 @@ import java.time.Instant;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

@@ -5,11 +5,12 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.springframework.lang.Nullable;
 
+import java.time.Instant;
+
 import static jakarta.persistence.FetchType.LAZY;
 import static jakarta.persistence.GenerationType.IDENTITY;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -29,4 +30,8 @@ public class Post {
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "id", referencedColumnName = "id")
     private Subreddit subreddit;
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "userId", referencedColumnName = "userId")
+    private User user;
+    private Instant createdDate;
 }
